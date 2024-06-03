@@ -14,7 +14,7 @@ void CreateMonser(SingleLinkedList& list, const char* name, int hp, int mp)
 	Monster2* m = new Monster2;
 	m->hp = hp;
 	m->mp = mp;
-	std::strncpy(m->name, name, NAME_LENGTH);
+	strncpy_s(m->name, name, NAME_LENGTH);
 	m->pNext = nullptr;
 	list.size++;
 
@@ -80,6 +80,7 @@ void DeleteList(SingleLinkedList& list)
 		delete m;
 	}
 
+	list.size = 0;
 	list.pHead = list.pTail = nullptr;
 
 }
@@ -118,6 +119,7 @@ void DeleteMonster(SingleLinkedList& list, const char* name)
 		{
 			previous->pNext = m->pNext;
 		}
+		list.size--;
 		delete m;
 	}
 }

@@ -9,10 +9,13 @@
 // 6. 출력
 #include"DynamicaArray.h"
 #include "SingleLinkedList.h"
+#include "DoubleLinkedList.h"
 
 int main()
 {
 	//DynamicArryTest();
 
-	SingleLinkedListTest();
+	//SingleLinkedListTest();
+
+	DoubleLinkedListTest();
 }
